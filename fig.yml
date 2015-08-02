@@ -1,0 +1,17 @@
+web:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - db
+  command: sh /var/www/journal/config/start_server.sh
+  environment:
+    RAILS_ENV: production
+db:
+  image: postgres
+  ports:
+    - "5432"
+  volumes:
+    - /etc/postgresql
+    - /var/log/postgresql
+    - /var/lib/postgresql
