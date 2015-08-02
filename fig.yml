@@ -4,7 +4,7 @@ web:
     - "80:80"
   links:
     - db
-  command: sh /var/www/journal/config/start_server.sh
+  command: sh /var/www/app/config/start_server.sh
   environment:
     RAILS_ENV: production
 db:
